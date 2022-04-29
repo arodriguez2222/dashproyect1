@@ -9,10 +9,11 @@ from deep_translator import GoogleTranslator
 
 # Create the app
 
-workspace_user = os.getenv('JUPYTERHUB_USER')  # Get DS4A Workspace user name
+#workspace_user = os.getenv('JUPYTERHUB_USER')  # Get DS4A Workspace user name
 request_path_prefix = None
-if workspace_user:
-    request_path_prefix = '/user/' + workspace_user + '/proxy/8050/'
+#if workspace_user:
+#request_path_prefix = '/user/' + workspace_user + '/proxy/8050/'
+request_path_prefix = '/user/proxy/8050/'
 
 app = Dash(__name__, requests_pathname_prefix=request_path_prefix, external_stylesheets=[dbc.themes.FLATLY],
                 meta_tags=[{'name':'viewport', 'content':'width=device-width, initial-scale=1.0'}])
